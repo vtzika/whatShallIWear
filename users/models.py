@@ -14,3 +14,5 @@ class User(models.Model):
     gender = models.CharField(max_length=13,
                                       choices=GENDERS_CHOICES,
                                       default=UNDEFINED)
+
+

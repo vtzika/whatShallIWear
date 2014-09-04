@@ -1,4 +1,5 @@
 from django.conf.urls import patterns, include, url
+from sources.models import Source
 
 from django.contrib import admin
 admin.autodiscover()
@@ -9,4 +10,6 @@ urlpatterns = patterns('',
     # url(r'^blog/', include('blog.urls')),
 
     url(r'^admin/', include(admin.site.urls)),
-)
+    url(r'^users/', include('users.urls')),
+    url(r'^outfits/', include('outfits.urls')),
+    )

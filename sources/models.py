@@ -10,7 +10,13 @@ class Source(models.Model):
         (UNDEFINED, 'UNDEFINED'),
     )
     source_url = models.TextField()
-    place = models.CharField(max_length=200)
+    location = models.CharField(max_length=200)
     gender = models.CharField(max_length=13,
                                       choices=GENDERS_CHOICES,
                                       default=UNDEFINED)
+
+
+
+
+def matchSourceWithUser(gender=None, location=None):
+    return Source.source_url(gender, location);
