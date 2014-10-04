@@ -1,0 +1,14 @@
+<h1> Let's start </h1>
+<h2> Can you provide me the gender? </h2>
+   <a href="">Female</a>
+   <a href="">Male</a>
+   <a href="">Not specified</a>
+<a href="">Next</a>
+
+<form action="{% url 'users:location' %}" method="post">
+    {% csrf_token %}
+    <input type="radio" name="choice" value="Female" />
+    <input type="radio" name="choice" value="Male" />
+    <input type="radio" name="choice" value="Female" />
+    <input type="submit" value="Next" />
+</form>

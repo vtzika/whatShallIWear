@@ -1,8 +1,14 @@
 from django.http import HttpResponse
+from django.shortcuts import render
+from django.template import RequestContext, Context
+from django.template.loader import get_template
 
-# Create your views here.
-def index(request):
-    return HttpResponse("Hello!!! Do you want to be recommended? Let's start!!!")
+
+def index(request, user_id):
+    t = get_template('index.html')
+    index = t.render(Context(request, {'uid': user_id}))
+    return HttpResponse(index)
+
 
 
 def gender(request):
@@ -11,4 +17,4 @@ def gender(request):
 
 
 def location(request):
-    return HttpResponse("Can you provide me your location?")
+    return render(request, 'location.html')

@@ -1,0 +1,8 @@
+<h2> Can you provide me your place? </h2>
+
+<form action="{% url 'outfits:recommend' %}" method="post">
+    {% csrf_token %}
+    <input type="radio" name="choice" id="Gr" value="Greece" />
+    <input type="radio" name="choice" id="NL" value="Netherlands" />
+    <input type="submit" value="Next" />
+</form>

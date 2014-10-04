@@ -10,7 +10,7 @@ class User(models.Model):
         (UNDEFINED, 'UNDEFINED'),
     )
     user_id = models.CharField(max_length=50)
-    place = models.CharField(max_length=200)
+    location = models.CharField(max_length=200)
     gender = models.CharField(max_length=13,
                                       choices=GENDERS_CHOICES,
                                       default=UNDEFINED)
